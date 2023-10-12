@@ -1,0 +1,11 @@
+@media screen and (max-width:576px) {
+    .nav-hide{
+        display: none;
+    }
+    .cart-wishlist i { 
+        padding: 5px 4px; 
+    }
+    .hide-hamburger{
+        display: block;
+    }
+}

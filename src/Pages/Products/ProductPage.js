@@ -6,9 +6,7 @@ function ProductPage() {
     const [data, setData] = useState([])
     const [counter, setCounter] = useState(0)
 
-
-
-    const prductID = useParams()
+ const prductID = useParams()
     const abc = prductID.id
 
     useEffect(() => {
@@ -18,7 +16,6 @@ function ProductPage() {
 
             })
         })
-
     }, [])
     const selectedProduct = data[abc - 1]
 
@@ -33,8 +30,6 @@ function ProductPage() {
             setCounter(0)
         }
     }
-
-
 
     return (
         <>
