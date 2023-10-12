@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom'
 import Logo from '../../Images/logo-main.png'
 
 function Navbar() {
+
+  const scrollToHome=()=>{
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
+  }
+
+
   return (
     <>
       <div className='container-fluid sticky-top py-1   border-bottom bg-white'>
@@ -13,11 +22,11 @@ function Navbar() {
             </div>
             <div className="col-lg-6 align-self-center">
               <div className="navbar-list">
-                <Link to='/'>Home</Link>
-                <Link to='/'>About</Link>
-                <Link to='/products'>Products</Link>
-                <Link to='/'>Gallery</Link>
-                <Link to='/'>Contact</Link>
+                <Link onClick={scrollToHome} to='/'>Home</Link>
+                <Link onClick={scrollToHome} to='/'>About</Link>
+                <Link onClick={scrollToHome} to='/products'>Products</Link>
+                <Link onClick={scrollToHome} to='/'>Gallery</Link>
+                <Link onClick={scrollToHome} to='/'>Contact</Link>
               </div>
             </div>
             <div className="col-lg-2 align-self-center text-end cart-wishlist">

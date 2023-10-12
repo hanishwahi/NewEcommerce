@@ -28,10 +28,10 @@ const BestSellingProduct= categorizedData.slice(0,6)
 
     return (
         <>
-            <div className='container-fluid py-3'>
+            <div className='container-fluid best-selling-main'>
             <div className="container-lg">
-                <div className="row">
-                    <h1 className='text-center h3 py-3'>Best Selling</h1>
+                <div className="row best-selling-heading">
+                    <h1>Best Selling</h1>
                 </div>
                 <div className="row">
 
@@ -47,8 +47,8 @@ const BestSellingProduct= categorizedData.slice(0,6)
                                             </div>
                                             <div class="card-body">
                                                 <h5 class=" card-title h6">{item.title}</h5>
-                                                <p class="h6">{item.rating}</p>
-                                                <p class="h6">$ {item.price}</p>
+                                                {/* <p class="h6">{item.rating}</p> */}
+                                                {/* <p class="h6">$ {item.price}</p> */}
                                                 <Link to={`/product/${item.id}`} class="button">Buy Now</Link>
                                             </div>
                                         </div>

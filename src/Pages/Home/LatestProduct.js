@@ -16,10 +16,10 @@ function LatestProduct() {
     const latestP = data.slice(-6)
 
     return (
-        <div className='container-fluid py-3'>
+        <div className='container-fluid latest-product-main'>
             <div className="container-lg">
-                <div className="row">
-                    <h1 className='text-center h3 py-3'>Latest Products</h1>
+                <div className="row latest-product-heading">
+                    <h1>Latest Products</h1>
                 </div>
                 <div className="row">
 
