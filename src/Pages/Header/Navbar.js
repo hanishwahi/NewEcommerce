@@ -5,11 +5,11 @@ import Logo from '../../Images/logo-main.png'
 function Navbar() {
   return (
     <>
-     <div className='container-fluid border-bottom py-1 bg-white  sticky-top'>
+      <div className='container-fluid sticky-top py-1   border-bottom bg-white'>
         <div className="container-lg">
           <div className="row">
             <div className="col-lg-4">
-               <img src={Logo} alt="" width={40}/>
+              <img src={Logo} alt="" width={40} />
             </div>
             <div className="col-lg-6 align-self-center">
               <div className="navbar-list">
@@ -20,8 +20,9 @@ function Navbar() {
                 <Link to='/'>Contact</Link>
               </div>
             </div>
-            <div className="col-lg-4">
-
+            <div className="col-lg-2 align-self-center text-end cart-wishlist">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-regular fa-heart"></i>
             </div>
           </div>
         </div>

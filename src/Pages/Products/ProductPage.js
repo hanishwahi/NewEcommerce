@@ -29,7 +29,7 @@ function ProductPage() {
     }
     const minusCart = () => {
         setCounter(counter - 1)
-        if (counter<=0){
+        if (counter <= 0) {
             setCounter(0)
         }
     }
@@ -45,7 +45,9 @@ function ProductPage() {
                         {selectedProduct && (
                             <>
                                 <div className='col-lg-6'>
-                                    <img src={selectedProduct.images[0]} alt="" className='img-fluid' />
+                                    <div className="border">
+                                        <img src={selectedProduct.images[0]} alt=""/>
+                                    </div>
 
                                 </div>
                                 <div className="col-lg-6">
@@ -65,12 +67,12 @@ function ProductPage() {
                                                     <h1 onClick={minusCart}>-</h1>
                                                 </div>
                                                 <div className="col-lg-4 counter-cart">
-                                                     <h1 className=''>{counter}</h1>
+                                                    <h1 className=''>{counter}</h1>
                                                 </div>
                                                 <div className="col-lg-4 counter-cart">
-                                                <h1 onClick={plusCart}>+</h1>
+                                                    <h1 onClick={plusCart}>+</h1>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                         <div className="col-lg-4">

@@ -36,7 +36,7 @@ function Products() {
                                                 <div class="card-body">
                                                     <h5 class="card-title">{item.title}</h5>
                                                     <p class="card-text">$ {item.price}</p>
-                                                    <Link to={`/product/${item.id}`} class="btn btn-primary">Buy Now</Link>
+                                                    <Link to={`/product/${item.id}`} class="button">Buy Now</Link>
                                                 </div>
                                             </div>
                                         </div>
