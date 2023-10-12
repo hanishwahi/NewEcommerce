@@ -83,7 +83,7 @@ function ProductPage() {
                                         </div>
                                     </div>
                                     <div className="row product-page-content">
-                                        <h2>{selectedProduct.category}</h2>
+                                        <h2>Category : {selectedProduct.category}</h2>
                                     </div>
                                 </div>
 

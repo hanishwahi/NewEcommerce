@@ -42,13 +42,23 @@ body {
 }
 .cart-wishlist i {
     font-size: 20px;
-    padding: 5px 10px;
+    padding: 5px 7px;
     cursor: pointer;
 }
 .cart-wishlist i:hover {
     color: #d113a7;
 }
-
+.nav-search{
+    display: flex;
+    align-items: center; 
+}
+.nav-search input{
+    outline: none; 
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 3px 10px;
+}
 
 /* latest products  */
 .latest-product-main {
