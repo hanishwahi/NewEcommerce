@@ -16,7 +16,7 @@ function LatestProduct() {
     const latestP = data.slice(-6)
 
     return (
-        <div className='container-fluid border-bottom py-3'>
+        <div className='container-fluid py-3'>
             <div className="container-lg">
                 <div className="row">
                     <h1 className='text-center h3 py-3'>Latest Products</h1>
@@ -31,7 +31,7 @@ function LatestProduct() {
                                     <div class="mb-3 col-lg-2"   >
                                         <div className='card '>
                                             <div className='latest-product-img'>
-                                                <img height="150px" src={item.images[0]} class="card-img-top" alt="..." />
+                                                <img height="150px" src={item.images[0]} class="card-img-top border" alt="..." />
                                             </div>
                                             <div className='latest-product-off'>
                                                     <h1>Off {item.discountPercentage} %</h1>

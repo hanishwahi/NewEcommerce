@@ -69,9 +69,19 @@
     background-color: #d113a7;
     color: #fff;
 }
-
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-radius: .25rem;
+}
 .card-title {
-    min-height: 55px;
+    min-height: 45px;
 }
 
 /* footer  */

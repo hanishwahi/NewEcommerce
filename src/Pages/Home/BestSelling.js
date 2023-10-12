@@ -23,12 +23,12 @@ function BestSelling() {
         setCategorizedData(topRating);
     }, [data]);
 
-
+const BestSellingProduct= categorizedData.slice(0,6)
     console.log("categorizedData",categorizedData)
 
     return (
         <>
-            <div className='container-fluid border-bottom py-3'>
+            <div className='container-fluid py-3'>
             <div className="container-lg">
                 <div className="row">
                     <h1 className='text-center h3 py-3'>Best Selling</h1>
@@ -36,17 +36,17 @@ function BestSelling() {
                 <div className="row">
 
                     {
-                        categorizedData.map((item) => {
+                        BestSellingProduct.map((item) => {
                             return (
                                 <>
 
-                                    <div class="mb-3 col-lg-3"   >
+                                    <div class="mb-3 col-lg-2"   >
                                         <div className='card border'>
                                             <div>
-                                                <img height="200px" src={item.images[0]} class="card-img-top" alt="..." />
+                                                <img height="150px" src={item.images[0]} class="card-img-top" alt="..." />
                                             </div>
                                             <div class="card-body">
-                                                <h5 class="h6">{item.title}</h5>
+                                                <h5 class=" card-title h6">{item.title}</h5>
                                                 <p class="h6">{item.rating}</p>
                                                 <p class="h6">$ {item.price}</p>
                                                 <Link to={`/product/${item.id}`} class="button">Buy Now</Link>

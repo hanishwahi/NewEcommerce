@@ -6,7 +6,7 @@ function Footer() {
      <>
      <div className="container-fluid top-head-bg">
         <div className="container-xl">
-            <div className="row">
+            <div className="row py-4">
                 <div className="col-lg-3">
                     <div>
                         <h1 className='text-white h4'>Logo</h1>
