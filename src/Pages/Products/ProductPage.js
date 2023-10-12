@@ -46,7 +46,7 @@ function ProductPage() {
                             <>
                                 <div className='col-lg-6'>
                                     <div className="border">
-                                        <img src={selectedProduct.images[0]} alt=""/>
+                                        <img src={selectedProduct.images[0]} alt="" />
                                     </div>
 
                                 </div>
@@ -60,8 +60,8 @@ function ProductPage() {
                                             <h2>{selectedProduct.discountPercentage}% Off </h2>
                                         </div>
                                     </div>
-                                    <div className="row text-center">
-                                        <div className="col-lg-4">
+                                    <div className="row text-center py-3">
+                                        <div className="col-lg-3">
                                             <div className="row align-self-center">
                                                 <div className="col-lg-4 counter-cart">
                                                     <h1 onClick={minusCart}>-</h1>
@@ -75,12 +75,15 @@ function ProductPage() {
 
                                             </div>
                                         </div>
-                                        <div className="col-lg-4">
-                                            <button>Add To Cart</button>
+                                        <div className="col-lg-3">
+                                            <button className='button'>Add To Cart</button>
                                         </div>
-                                        <div className="col-lg-4">
-                                            <button>Add To Wishlist</button>
+                                        <div className="col-lg-1 wishlist-product-page">
+                                            <i class="fa-regular fa-heart"></i>
                                         </div>
+                                    </div>
+                                    <div className="row product-page-content">
+                                        <h2>{selectedProduct.category}</h2>
                                     </div>
                                 </div>
 
