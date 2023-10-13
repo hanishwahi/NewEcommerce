@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 function LatestProduct() {
     const [data, setData] = useState([])
@@ -13,43 +15,84 @@ function LatestProduct() {
 
     }, [])
 
-    const latestP = data.slice(-6)
+    const latestP = data.slice(-8)
+
+
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 6
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 6
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
 
     return (
-        <div className='container-fluid latest-product-main'>
-            <div className="container-lg">
-                <div className="row latest-product-heading">
-                    <h1>Latest Products</h1>
+        <>
+
+            <div className='latest-product-main'>
+                <div className="container-fluid ">
+                    <div className="row latest-product-heading">
+                        <h1>Latest Products</h1>
+                    </div>
+
                 </div>
-                <div className="row">
+                <div className="container-fluid">
+                    <Carousel swipeable={false}
+                        draggable={false}
+                        showDots={true}
+                        responsive={responsive}
+                        ssr={true} // means to render carousel on server-side.
+                        infinite={true}
+                        autoPlay={true}
+                        autoPlaySpeed={1000}
+                        keyBoardControl={true}
+                        customTransition="all .5"
+                        transitionDuration={500}
+                        containerClass="carousel-container"
+                        removeArrowOnDeviceType={["tablet", "mobile"]}
+                        dotListClass="custom-dot-list-style"
+                        itemClass="carousel-item-padding-40-px">
+                        {
+                            latestP.map((item) => {
+                                return (
+                                    <>
 
-                    {
-                        latestP.map((item) => {
-                            return (
-                                <>
-
-                                    <div class="mb-3 col-lg-2"   >
-                                        <div className='card '>
-                                            <div className='latest-product-img'>
-                                                <img height="150px" src={item.images[0]} class="card-img-top border" alt="..." />
-                                            </div>
-                                            <div className='latest-product-off'>
+                                        <div class="mb-3 col-lg-11"   >
+                                            <div className='card '>
+                                                <div className='latest-product-img'>
+                                                    <img height="150px" src={item.images[0]} class="card-img-top border" alt="..." />
+                                                </div>
+                                                <div className='latest-product-off'>
                                                     <h1>Off {item.discountPercentage} %</h1>
                                                 </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title h6">{item.title}</h5>
-                                                {/* <p class="card-text">$ {item.price}</p> */}
-                                                <Link to={`/product/${item.id}`} class="button">Buy Now</Link>
+                                                <div class="card-body">
+                                                    <h5 class="card-title h6">{item.title}</h5>
+                                                    {/* <p class="card-text">$ {item.price}</p> */}
+                                                    <Link to={`/product/${item.id}`} class="button">Buy Now</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </>
-                            )
-                        })
-                    }
+                                    </>
+                                )
+                            })
+                        }
+                    </Carousel>
                 </div>
             </div>
-        </div>
+
+        </>
     )
 }
 
