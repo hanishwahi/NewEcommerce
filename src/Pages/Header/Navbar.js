@@ -21,7 +21,7 @@ function Navbar() {
         <div className="container-xl">
           <div className="row">
             <div className="col-lg-1 col-3 col-md-2 col-sm-2">
-              <img src={Logo} alt="" width={40} />
+              <Link to='/'><img src={Logo} alt="" width={40} /></Link>
             </div>
             <div className="col-lg-5 col-md-7 col-sm-10 align-self-center nav-hide">
               <div className="navbar-list">
