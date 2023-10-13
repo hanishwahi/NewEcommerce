@@ -9,7 +9,8 @@
         padding: 5px 4px; 
     }
     .hide-hamburger{
-        display: block;
+        display: flex;
+        align-items: center;
     }
     .latest-product-heading h1 { 
         font-size: 20px; 
@@ -44,18 +45,20 @@
         display: none;
     }
     .hide-hamburger{
-        display: block;
+        display: flex;
+        align-items: center;
     }
     .top-head-text{
         display: none;
     }
 }
 
-@media screen and (min-width:678px) and (max-width:992px) {
+@media screen and (min-width:778px) and (max-width:992px) {
     .nav-hide{
         display: none;
     }
     .hide-hamburger{
-        display: block;
+        display: flex;
+        align-items: center;
     }
 }
