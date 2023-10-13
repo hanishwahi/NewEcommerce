@@ -2,6 +2,9 @@
     .nav-hide{
         display: none;
     }
+    .top-head-text{
+        display: none;
+    }
     .cart-wishlist i { 
         padding: 5px 4px; 
     }
@@ -31,6 +34,9 @@
     .product-page-content h2 {
         font-size: 17px; 
     }
+    .cart-wishlist i {
+        font-size: 16px; 
+    }
 }
 
 @media screen and (min-width:577px) and (max-width:767px) {
@@ -39,6 +45,9 @@
     }
     .hide-hamburger{
         display: block;
+    }
+    .top-head-text{
+        display: none;
     }
 }
 

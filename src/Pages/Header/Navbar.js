@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <>
       <div className='container-fluid py-1 border-bottom bg-white'>
-        <div className="container-lg">
+        <div className="container-xl">
           <div className="row">
             <div className="col-lg-1 col-3 col-md-2 col-sm-2">
               <img src={Logo} alt="" width={40} />
