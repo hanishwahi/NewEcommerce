@@ -5,6 +5,7 @@ import LatestProduct from './LatestProduct'
 import BestSelling from './BestSelling'
 import Footer from '../Footer/Footer'
 import TopBrand from './TopBrand'
+import Banner from './Banner'
 
 function Home() {
     return (
@@ -13,6 +14,7 @@ function Home() {
             <Slider /> 
             <LatestProduct/>
             <BestSelling/>
+            <Banner/>
             <TopBrand/>
             <Footer/>
         </>
