@@ -40,6 +40,16 @@ body {
 .navbar-list a:hover {
     color: #d113a7;
 }
+
+ 
+.navbar-list-menu a {
+    text-align: left;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    font-family: 'roboto', sans-serif;
+}
 .cart-wishlist i {
     font-size: 20px;
     padding: 5px 7px;

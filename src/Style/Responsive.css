@@ -14,4 +14,10 @@
     .best-selling-heading h1 { 
         font-size: 26px; 
     }
+    .latest-product-main {
+        padding: 40px 0 20px;
+    }
+    .best-selling-main {
+        padding: 20px 0;
+    }
 }
