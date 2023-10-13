@@ -16,7 +16,7 @@ function TopHead() {
                         </div>
                         <div className="col-lg-8 col-12 col-sm-4
                          text-end">
-                            <div className="login-signup"> <Link>Login/Signup</Link></div>
+                            <div className="login-signup"> <Link to='/signup'>Login/Signup</Link></div>
                         </div>
                     </div>
                 </div>
