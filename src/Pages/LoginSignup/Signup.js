@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
 
 function Signup() {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const handleSubmit= (e)=>{
+        e.preventDefault()
+        const data=  {name, email, password} 
+        const existingData = JSON.parse(localStorage.getItem('data')) || [];
+        const updatedData = [...existingData, data]; 
+        localStorage.setItem('data', JSON.stringify(updatedData));
+    }
+
     return (
         <>
             <Header />
@@ -16,38 +28,39 @@ function Signup() {
                                 <div class="card-body">
                                     <div class="row justify-content-center">
                                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
                                             <p class="text-center h4 fw-bold my-4">Sign up</p>
                                             <form class="mx-1 mx-md-4">
-
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
-                                                        <input type="text" id="form3Example1c" class="form-control" placeholder='Name' />
-
+                                                        <input type="text" id="form3Example1c" class="form-control" placeholder='Name' 
+                                                        onChange={(e)=>{setName(e.target.value)}}/>
                                                     </div>
                                                 </div>
 
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
-                                                        <input type="email" id="form3Example3c" class="form-control" placeholder='Email' />
+                                                        <input type="email" id="form3Example3c" class="form-control" placeholder='Email' 
+                                                         onChange={(e)=>{setEmail(e.target.value)}}/>
                                                     </div>
                                                 </div>
 
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4c" class="form-control" placeholder='Password' />
+                                                        <input type="password" id="form3Example4c" class="form-control" placeholder='Password' 
+                                                        onChange={(e)=>{setPassword(e.target.value)}}
+                                                        />
                                                     </div>
                                                 </div>
 
-                                                <div class="d-flex flex-row align-items-center mb-4">
+                                                {/* <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <input type="password" id="form3Example4cd" class="form-control" placeholder='Repeat Password' />
                                                     </div>
-                                                </div>
+                                                </div> */}
 
                                                 <div class="form-check d-flex justify-content-center mb-1">
                                                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
@@ -55,12 +68,12 @@ function Signup() {
                                                         I agree all statements in <a href="#!">Terms of service</a>
                                                     </label>
                                                 </div>
-                                                <div className='ps-4'>  
-                                                        <p>Already have a account? <Link to='/login'>login</Link></p>  
+                                                <div className='ps-4'>
+                                                    <p>Already have a account? <Link to='/login'>login</Link></p>
                                                 </div>
 
                                                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <button type="button" class="button btn-lg">Signup</button>
+                                                    <button onClick={handleSubmit} type="button" class="button btn-lg">Signup</button>
                                                 </div>
 
                                             </form>
