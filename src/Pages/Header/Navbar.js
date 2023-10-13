@@ -20,7 +20,7 @@ function Navbar() {
       <div className='container-fluid py-1 border-bottom bg-white'>
         <div className="container-lg">
           <div className="row">
-            <div className="col-lg-2 col-3 col-md-2 col-sm-2">
+            <div className="col-lg-1 col-3 col-md-2 col-sm-2">
               <img src={Logo} alt="" width={40} />
             </div>
             <div className="col-lg-5 col-md-7 col-sm-10 align-self-center nav-hide">
@@ -32,14 +32,13 @@ function Navbar() {
                 <Link onClick={scrollToHome} to='/'>Contact</Link>
               </div>
             </div>
-            <div className="col-lg-4 col-12 col-md-7 col-sm-7 nav-search order-2 order-sm-0 mt-2">
+            <div className="col-lg-5 col-12 col-md-7 col-sm-7 nav-search order-2 order-sm-0 mt-2 mt-sm-0">
               <form onSubmit={handleSubmit} style={{width:"100%"}}>
                 <input type="search" name="" id="" placeholder='search..' onChange={(e) => setSearchParams({ q:e.target.value })} />
               </form>
             </div>
             <div className="col-lg-1 col-7 col-md-2 col-sm-2 align-self-center text-end cart-wishlist ">
-              <i className="fa-solid fa-cart-shopping"></i>
-              <i className="fa-regular fa-heart"></i>
+              <i className="fa-solid fa-cart-shopping"> cart</i> 
             </div>
             <div className="col-lg-12 col-sm-1 col-2 hide-hamburger">
               <div className="hamburger">
