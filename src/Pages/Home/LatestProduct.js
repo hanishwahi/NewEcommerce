@@ -34,7 +34,7 @@ function LatestProduct() {
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1
+            items: 2
         }
     };
 
@@ -69,7 +69,7 @@ function LatestProduct() {
                                 return (
                                     <>
 
-                                        <div class="mb-3 col-lg-11"   >
+                                        <div class="mb-3 col-lg-11 col-11"   >
                                             <div className='card '>
                                                 <div className='latest-product-img'>
                                                     <img height="150px" src={item.images[0]} class="card-img-top border" alt="..." />

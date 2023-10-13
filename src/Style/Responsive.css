@@ -8,4 +8,10 @@
     .hide-hamburger{
         display: block;
     }
+    .latest-product-heading h1 { 
+        font-size: 26px; 
+    }
+    .best-selling-heading h1 { 
+        font-size: 26px; 
+    }
 }

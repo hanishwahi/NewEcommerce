@@ -177,3 +177,20 @@ body {
     font-family: 'roboto', sans-serif;
     font-weight: 300;
 }
+
+
+/* carousel  */
+
+.react-multiple-carousel__arrow {
+    position: absolute;
+    outline: 0;
+    transition: all .5s;
+    border-radius: 35px;
+    z-index: 1000;
+    border: 0;
+    background: #d113a7 !important;
+    min-width: 33px !important;
+    min-height: 33px !important;
+    opacity: 1;
+    cursor: pointer;
+}
