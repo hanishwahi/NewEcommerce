@@ -32,3 +32,21 @@
         font-size: 17px; 
     }
 }
+
+@media screen and (min-width:577px) and (max-width:767px) {
+    .nav-hide{
+        display: none;
+    }
+    .hide-hamburger{
+        display: block;
+    }
+}
+
+@media screen and (min-width:678px) and (max-width:992px) {
+    .nav-hide{
+        display: none;
+    }
+    .hide-hamburger{
+        display: block;
+    }
+}
