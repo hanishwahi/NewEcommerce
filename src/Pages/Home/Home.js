@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 import LatestProduct from './LatestProduct'
 import BestSelling from './BestSelling'
 import Footer from '../Footer/Footer'
+import TopBrand from './TopBrand'
 
 function Home() {
     return (
@@ -12,6 +13,7 @@ function Home() {
             <Slider /> 
             <LatestProduct/>
             <BestSelling/>
+            <TopBrand/>
             <Footer/>
         </>
     )
