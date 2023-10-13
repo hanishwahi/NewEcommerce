@@ -28,10 +28,10 @@ function Products() {
                                 return (
                                     <>
 
-                                        <div class="mb-3 col-lg-3"   >
+                                        <div class="mb-3 col-lg-3 col-6"   >
                                             <div className='card '>
                                                 <div>
-                                                    <img height="200px" src={item.images[0]} class="card-img-top" alt="..." />
+                                                    <img height="150px" src={item.images[0]} class="card-img-top border" alt="..." />
                                                 </div>
                                                 <div class="card-body">
                                                     <h5 class="card-title">{item.title}</h5>

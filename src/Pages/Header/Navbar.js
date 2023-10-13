@@ -1,24 +1,20 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import Logo from '../../Images/logo-main.png'
 import { useSearchParams } from "react-router-dom";
 
 function Navbar() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams(); 
 
-  const params = useParams();
-
+  function handleSubmit(e) {
+    e.preventDefault(); 
+  }
   const scrollToHome = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     })
   }
-  function handleSubmit(e) {
-    e.preventDefault();
-    setSearchParams(params);
-  }
-
   return (
     <>
       <div className='container-fluid sticky-top py-1   border-bottom bg-white'>
@@ -37,7 +33,9 @@ function Navbar() {
               </div>
             </div>
             <div className="col-lg-4 col-7 col-md-4 col-sm-9 nav-search">
-              <input type="search" name="" id="" placeholder='search..' onSubmit={handleSubmit} onChange={(e) => setSearchParams(e.target.value)} />
+              <form onSubmit={handleSubmit} style={{width:"100%"}}>
+                <input type="search" name="" id="" placeholder='search..' onChange={(e) => setSearchParams({ q:e.target.value })} />
+              </form>
             </div>
             <div className="col-lg-1 col-3 col-md-12 col-sm-3 align-self-center text-end cart-wishlist">
               <i className="fa-solid fa-cart-shopping"></i>
@@ -45,23 +43,23 @@ function Navbar() {
             </div>
             <div className="col-lg-12 hide-hamburger">
               <div className="hamburger">
-                <i className="fa-solid fa-bars"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i> 
+                <i className="fa-solid fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i>
               </div>
-          
-              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+              <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div className="offcanvas-header">
+                  <h5 className="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                  <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
-                <div className="navbar-list-menu">
-                  <Link onClick={scrollToHome} to='/'><p>Home</p></Link>
-                  <Link onClick={scrollToHome} to='/'><p>About</p></Link>
-                  <Link onClick={scrollToHome} to='/products'><p>Products</p></Link>
-                  <Link onClick={scrollToHome} to='/'><p>Gallery</p></Link>
-                  <Link onClick={scrollToHome} to='/'><p>Contact</p></Link>
-                </div>
-                  
+                <div className="offcanvas-body">
+                  <div className="navbar-list-menu">
+                    <Link onClick={scrollToHome} to='/'><p>Home</p></Link>
+                    <Link onClick={scrollToHome} to='/'><p>About</p></Link>
+                    <Link onClick={scrollToHome} to='/products'><p>Products</p></Link>
+                    <Link onClick={scrollToHome} to='/'><p>Gallery</p></Link>
+                    <Link onClick={scrollToHome} to='/'><p>Contact</p></Link>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -69,6 +67,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+
     </>
   )
 }

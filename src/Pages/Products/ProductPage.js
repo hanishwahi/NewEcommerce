@@ -39,13 +39,13 @@ function ProductPage() {
                     <div className="row py-5">
                         {selectedProduct && (
                             <>
-                                <div className='col-lg-6'>
+                                <div className='col-lg-6 col-12 mt-2'>
                                     <div className="border">
-                                        <img src={selectedProduct.images[0]} alt="" />
+                                        <img src={selectedProduct.images[0]} alt="" className='img-fluid'/>
                                     </div>
 
                                 </div>
-                                <div className="col-lg-6">
+                                <div className="col-lg-6 mt-2">
                                     <div className="row">
                                         <div className="col product-page-content">
                                             <h1>{selectedProduct.title}</h1>
@@ -56,24 +56,24 @@ function ProductPage() {
                                         </div>
                                     </div>
                                     <div className="row text-center py-3">
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-5">
                                             <div className="row align-self-center">
-                                                <div className="col-lg-4 counter-cart">
+                                                <div className="col-lg-4 col-4 counter-cart">
                                                     <h1 onClick={minusCart}>-</h1>
                                                 </div>
-                                                <div className="col-lg-4 counter-cart">
+                                                <div className="col-lg-4 col-4 counter-cart">
                                                     <h1 className=''>{counter}</h1>
                                                 </div>
-                                                <div className="col-lg-4 counter-cart">
+                                                <div className="col-lg-4 col-4 counter-cart">
                                                     <h1 onClick={plusCart}>+</h1>
                                                 </div>
 
                                             </div>
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-5">
                                             <button className='button'>Add To Cart</button>
                                         </div>
-                                        <div className="col-lg-1 wishlist-product-page">
+                                        <div className="col-lg-1 col-2 wishlist-product-page text-center">
                                             <i class="fa-regular fa-heart"></i>
                                         </div>
                                     </div>

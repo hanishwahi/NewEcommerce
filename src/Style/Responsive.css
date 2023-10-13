@@ -9,15 +9,26 @@
         display: block;
     }
     .latest-product-heading h1 { 
-        font-size: 26px; 
+        font-size: 20px; 
     }
     .best-selling-heading h1 { 
-        font-size: 26px; 
+        font-size: 20px; 
+   
     }
     .latest-product-main {
         padding: 40px 0 20px;
     }
     .best-selling-main {
         padding: 20px 0;
+    }
+    .react-multiple-carousel__arrow { 
+        min-width: 32px !important;
+        min-height: 26px !important; 
+    }
+    .product-page-content h1 {
+        font-size: 24px; 
+    }
+    .product-page-content h2 {
+        font-size: 17px; 
     }
 }

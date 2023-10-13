@@ -7,20 +7,18 @@ body {
     background-color: #d113a7;
     padding: 7px 0;
 }
+
+ 
+
 .top-head-text p {
-    color: #fff;
-    justify-content: end;
-    display: flex;
-    align-items: center;
+    color: #fff; 
     margin-bottom: 0;
     font-family: 'roboto', sans-serif;
     font-size: 15px;
 }
-.top-head-text a {
+.login-signup a {
     color: #fff;
-    justify-content: end;
-    display: flex;
-    align-items: center;
+
     text-decoration: none;
     font-family: 'roboto', sans-serif;
 }
@@ -41,7 +39,7 @@ body {
     color: #d113a7;
 }
 
- 
+
 .navbar-list-menu a {
     text-align: left;
     text-decoration: none;
@@ -58,21 +56,21 @@ body {
 .cart-wishlist i:hover {
     color: #d113a7;
 }
-.nav-search{
+.nav-search {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
-.nav-search input{
-    outline: none; 
+.nav-search input {
+    outline: none;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 3px 10px;
 }
-.hide-hamburger{
+.hide-hamburger {
     display: none;
 }
-.hamburger{
+.hamburger {
     text-align: right;
     font-size: 28px;
 }
@@ -84,8 +82,9 @@ body {
 .latest-product-heading h1 {
     text-align: center;
     font-family: 'roboto', sans-serif;
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 .button {
     background-color: #d113a7;
@@ -137,8 +136,9 @@ body {
 .best-selling-heading h1 {
     text-align: center;
     font-family: 'roboto', sans-serif;
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 /* product page  */
 
@@ -170,6 +170,7 @@ body {
     border: 1px solid #d113a7;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .wishlist-product-page i {
     font-size: 24px;
@@ -194,7 +195,7 @@ body {
 .react-multiple-carousel__arrow {
     position: absolute;
     outline: 0;
-    transition: all .5s;
+    transition: all 0.5s;
     border-radius: 35px;
     z-index: 1000;
     border: 0;

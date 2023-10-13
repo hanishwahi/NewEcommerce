@@ -26,7 +26,7 @@ function BestSelling() {
     }, [data]);
 
     const BestSellingProduct = categorizedData.slice(0, 6)
-    console.log("categorizedData", categorizedData)
+    // console.log("categorizedData", categorizedData)
 
     const responsive = {
         superLargeDesktop: {
@@ -44,7 +44,7 @@ function BestSelling() {
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1
+            items: 2
         }
     };
 
@@ -58,44 +58,43 @@ function BestSelling() {
 
                 </div>
                 <div className="container-fluid">
-                    <Carousel swipeable={false}
-                        draggable={true}
-                        showDots={false}
-                        responsive={responsive}
-                        ssr={true} // means to render carousel on server-side.
-                        infinite={true}
-                        autoPlay={true}
-                        autoPlaySpeed={1000}
-                        keyBoardControl={true}
-                        customTransition="all .5"
-                        transitionDuration={500}
-                        containerClass="carousel-container"
-                        removeArrowOnDeviceType={["tablet", "mobile"]}
-                        dotListClass="custom-dot-list-style"
-                        itemClass="carousel-item-padding-40-px">
-                        {
-                            BestSellingProduct.map((item) => {
-                                return (
-                                    <>
-
-                                        <div class="mb-3 col-lg-11"   >
-                                            <div className='card border'>
-                                                <div>
-                                                    <img height="150px" src={item.images[0]} class="card-img-top" alt="..." />
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class=" card-title h6">{item.title}</h5>
-                                                    {/* <p class="h6">{item.rating}</p> */}
-                                                    {/* <p class="h6">$ {item.price}</p> */}
-                                                    <Link to={`/product/${item.id}`} class="button">Buy Now</Link>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </>
-                                )
-                            })
-                        }
-                    </Carousel>
+                    <div className="row">
+                        <Carousel swipeable={false}
+                            draggable={true}
+                            showDots={false}
+                            responsive={responsive}
+                            ssr={true} // means to render carousel on server-side.
+                            infinite={true}
+                            autoPlay={true}
+                            autoPlaySpeed={1000}
+                            keyBoardControl={true}
+                            customTransition="all .5"
+                            transitionDuration={500}
+                            containerclassName="carousel-container"
+                            dotListclassName="custom-dot-list-style"
+                            itemclassName="carousel-item-padding-40-px">
+                            {
+                                BestSellingProduct.map((item) => {
+                                    // console.log("item", item.id)
+                                    return (   
+                                                <div key={item.id} className="mb-3 col-lg-11 col-11" >
+                                                    <div className='card border'>
+                                                        <div>
+                                                            <img height="150px" src={item.images[0]} className="card-img-top" alt="..." />
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <h5 className=" card-title h6">{item.title}</h5>
+                                                            {/* <p className="h6">{item.rating}</p> */}
+                                                            {/* <p className="h6">$ {item.price}</p> */}
+                                                            <Link to={`/product/${item.id}`} className="button">Buy Now</Link>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                    )
+                                })
+                            }
+                        </Carousel>
+                    </div>
                 </div>
             </div>
         </>
