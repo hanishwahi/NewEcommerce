@@ -17,7 +17,7 @@ function Navbar() {
   }
   return (
     <>
-      <div className='container-fluid sticky-top py-1   border-bottom bg-white'>
+      <div className='container-fluid py-1 border-bottom bg-white'>
         <div className="container-lg">
           <div className="row">
             <div className="col-lg-2 col-2 col-md-1 col-sm-2">
