@@ -67,7 +67,7 @@ function LatestProduct() {
                             {
                                 latestP.map((item) => {
                                     return (
-                                        <div key={item.id} className="mb-3 col-lg-11 col-11 border"   >
+                                        <div key={item.id} className="mb-3 col-lg-11 col-11"   >
                                             <Link to={`/product/${item.id}`} className='text-decoration-none'>
                                                 <div className='card '>
 

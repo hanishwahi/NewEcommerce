@@ -4,7 +4,7 @@ import { app } from '../../Firebase/Firbase'
 import React, {useState} from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 const auth = getAuth(app)
 
@@ -14,9 +14,12 @@ function Login() {
     const [error, setError]= useState(false)
 
 
+    const Navigate= useNavigate();
+
     const signinUser = () => {
         signInWithEmailAndPassword(auth, email, password).then(() => {
             console.log("signin successfull")
+            Navigate("/")
         }).catch((err) => {
             console.log("err", err)
             setError(true)
