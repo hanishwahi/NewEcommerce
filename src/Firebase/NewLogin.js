@@ -12,13 +12,10 @@ function NewLogin() {
     const [password, setPassword] = useState("")
 
     const firebase = useFirebase();
-    console.log(firebase)
+    console.log("firebase", firebase)
     return (
         <>
-            <Header />
-
-
-
+            <Header /> 
             <section className="" style={{ backgroundColor: "eee" }}>
                 <div className="container-xl">
                     <div className="row d-flex justify-content-center align-items-center">
@@ -74,8 +71,10 @@ function NewLogin() {
                                                 </div>
 
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <button onClick={() => {firebase.signupUserWithEmailPassword(email, password);
-                                                    firebase.addData('users' + "login", { name, email, password });}} type="button" className="button btn-lg">Signup</button>
+                                                    <button onClick={() => {
+                                                        firebase.signupUserWithEmailPassword(email, password);
+                                                        firebase.addData('users' + "login", { name, email, password });
+                                                    }} type="button" className="button btn-lg">Signup</button>
                                                 </div>
 
                                             </form>
