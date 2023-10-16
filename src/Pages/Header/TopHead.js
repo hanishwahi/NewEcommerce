@@ -9,14 +9,14 @@ function TopHead() {
                     <div className="row">
                         <div className="col-lg-6 col-md-8 col-12 col-sm-8 top-head-text">
                             <div className="row">
-                                <div className="col-4"><p><i class="fa-solid fa-truck-fast"></i> Free Shipping</p></div> 
-                                <div className="col-4"><p><i class="fa-solid fa-truck"></i> Cash on Delivery</p></div> 
-                                <div className="col-4"><p><i class="fa fa-exchange" aria-hidden="true"></i> Return Policy</p></div>  
+                                <div className="col-4"><p><i className="fa-solid fa-truck-fast"></i> Free Shipping</p></div> 
+                                <div className="col-4"><p><i className="fa-solid fa-truck"></i> Cash on Delivery</p></div> 
+                                <div className="col-4"><p><i className="fa fa-exchange" aria-hidden="true"></i> Return Policy</p></div>  
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-4 col-12 col-sm-12
                          text-end">
-                            <div className="login-signup"><i class="fa-regular fa-user" style={{color:"#fff"}}></i> <Link to='/signup'>Account & Lists</Link></div>
+                            <div className="login-signup"><i className="fa-regular fa-user" style={{color:"#fff"}}></i> <Link to='/signup'>Account & Lists</Link></div>
                         </div>
                     </div>
                 </div>

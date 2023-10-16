@@ -66,9 +66,11 @@ function LatestProduct() {
                             itemclassName="carousel-item-padding-40-px">
                             {
                                 latestP.map((item) => {
-                                    return ( 
-                                    <div key={item.id} className="mb-3 col-lg-11 col-11"   >
+                                    return (
+                                        <div key={item.id} className="mb-3 col-lg-11 col-11 border"   >
+                                            <Link to={`/product/${item.id}`} className='text-decoration-none'>
                                                 <div className='card '>
+
                                                     <div className='latest-product-img'>
                                                         <img height="150px" src={item.images[0]} className="card-img-top border" alt="..." />
                                                     </div>
@@ -78,10 +80,12 @@ function LatestProduct() {
                                                     <div className="card-body">
                                                         <h5 className="card-title h6">{item.title}</h5>
                                                         {/* <p className="card-text">$ {item.price}</p> */}
-                                                        <Link to={`/product/${item.id}`} className="button">Buy Now</Link>
+                                                        {/* <Link to={`/product/${item.id}`} className="button">Buy Now</Link> */}
                                                     </div>
+
                                                 </div>
-                                            </div> 
+                                            </Link>
+                                        </div>
                                     )
                                 })
                             }

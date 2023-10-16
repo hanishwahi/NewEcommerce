@@ -1,47 +1,23 @@
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
-import { app } from '../../Firebase/Firbase'
 
 import React, { useState } from 'react'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import Header from '../Pages/Header/Header'
+import Footer from '../Pages/Footer/Footer'
 import { Link } from 'react-router-dom'
+import { useFirebase } from './Context'
 
 
-const auth = getAuth(app)
-
-function Signup() {
+function NewLogin() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    // const handleSubmit= (e)=>{
-    //     e.preventDefault()
-    //     const data=  {name, email, password} 
-    //     const existingData = JSON.parse(localStorage.getItem('data')) || [];
-    //     const updatedData = [...existingData, data]; 
-    //     localStorage.setItem('data', JSON.stringify(updatedData));
-    // }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        if (password.length < 6) {
-            alert("Minimum 6 characters password is required");
-        } else {
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {                    
-                    console.log( userCredential);
-                })
-                
-        }
-        
-        setName("");
-        setEmail("");
-        setPassword("");
-    }
+    const firebase = useFirebase();
+    console.log(firebase)
     return (
         <>
             <Header />
+
+
 
             <section className="" style={{ backgroundColor: "eee" }}>
                 <div className="container-xl">
@@ -57,7 +33,8 @@ function Signup() {
                                                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <input type="text" id="form3Example1c" className="form-control" placeholder='Name'
-                                                            onChange={(e) => { setName(e.target.value) }} />
+                                                            onChange={(e) => { setName(e.target.value) }}
+                                                            value={name} />
                                                     </div>
                                                 </div>
 
@@ -65,7 +42,7 @@ function Signup() {
                                                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <input type="email" id="form3Example3c" className="form-control" placeholder='Email'
-                                                            onChange={(e) => { setEmail(e.target.value) }} />
+                                                            onChange={(e) => { setEmail(e.target.value) }} value={email} />
                                                     </div>
                                                 </div>
 
@@ -74,6 +51,7 @@ function Signup() {
                                                     <div className="form-outline flex-fill mb-0">
                                                         <input type="password" id="form3Example4c" className="form-control" placeholder='Password'
                                                             onChange={(e) => { setPassword(e.target.value) }}
+                                                            value={password}
                                                         />
                                                     </div>
                                                 </div>
@@ -87,7 +65,7 @@ function Signup() {
 
                                                 <div className="form-check d-flex justify-content-center mb-1">
                                                     <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                                                    <label className="form-check-label" for="form2Example3">
+                                                    <label className="form-check-label" htmlFor="form2Example3">
                                                         I agree all statements in <a href="#!">Terms of service</a>
                                                     </label>
                                                 </div>
@@ -96,7 +74,8 @@ function Signup() {
                                                 </div>
 
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <button onClick={handleSubmit} type="button" className="button btn-lg">Signup</button>
+                                                    <button onClick={() => {firebase.signupUserWithEmailPassword(email, password);
+                                                    firebase.addData('users' + "login", { name, email, password });}} type="button" className="button btn-lg">Signup</button>
                                                 </div>
 
                                             </form>
@@ -120,4 +99,4 @@ function Signup() {
     )
 }
 
-export default Signup
+export default NewLogin
