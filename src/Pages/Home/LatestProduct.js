@@ -16,8 +16,9 @@ function LatestProduct() {
     }, [])
 
     const latestP = data.slice(-8)
-
-
+    
+ 
+    
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
