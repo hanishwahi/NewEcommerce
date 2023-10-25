@@ -1,13 +1,15 @@
-import React from 'react'
-import { Link} from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Logo from '../../Images/logo-main.png'
 import { useSearchParams } from "react-router-dom";
+import Select from 'react-select'
 
 function Navbar() {
-  const [searchParams, setSearchParams] = useSearchParams(); 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searData, setsearData] = useState("")
 
   function handleSubmit(e) {
-    e.preventDefault(); 
+    e.preventDefault();
   }
   const scrollToHome = () => {
     window.scrollTo({
@@ -15,6 +17,18 @@ function Navbar() {
       behavior: 'smooth'
     })
   }
+
+  const Search = () => {
+    setSearchParams(searData)
+  }
+
+
+  const options = [
+    { id: 1, label: "Lipstick", value: "Lipstick" },
+    { id: 2, label: "a", value: "a" },
+    { id: 3, label: "b", value: "b" },
+    { id: 4, label: "c", value: "c" },
+  ]
   return (
     <>
       <div className='container-fluid py-1 border-bottom bg-white'>
@@ -33,12 +47,15 @@ function Navbar() {
               </div>
             </div>
             <div className="col-lg-5 col-12 col-md-7 col-sm-7 nav-search order-2 order-sm-0 mt-2 mt-sm-0">
-              <form onSubmit={handleSubmit} style={{width:"100%"}}>
-                <input type="search" name="" id="" placeholder='search..' onChange={(e) => setSearchParams({ q:e.target.value })} />
+              <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+                <Select options={options} placeholder="From City" className="w-100"
+                  onChange={(selectedOption) => setsearData({ q: selectedOption.label })} />
+                <button onClick={Search}>Search</button>
+                {/* <input type="search" name="" id="" placeholder='search..' value={data.product} onChange={(e) => setSearchParams({ q: e.target.value })} /> */}
               </form>
             </div>
             <div className="col-lg-1 col-7 col-md-2 col-sm-2 align-self-center text-end cart-wishlist ">
-              <i className="fa-solid fa-cart-shopping"> cart</i> 
+              <i className="fa-solid fa-cart-shopping"> cart</i>
             </div>
             <div className="col-lg-12 col-sm-1 col-2 hide-hamburger">
               <div className="hamburger">
